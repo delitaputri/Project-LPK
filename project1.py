@@ -1,7 +1,8 @@
 import streamlit as st 
 
-st.title('Aplikasi Perhitungan Molaritas')
 
+st.title('Aplikasi Perhitungan Molaritas')
+    
 st.latex(r'''
     M =
     \left(\frac{massa}{fp × volume × bm}\right) =
@@ -16,8 +17,12 @@ st.write('volume senyawa=',volume)
 bm=st.number_input('bm=')
 st.write('bm senyawa=',bm)
 
-Operasi_Molaritas=massa/(fp*volume*bm)
-st.write(f'''
-        M =
-    {massa}/{fp} × {volume} × {bm} = {Operasi_Molaritas}
-    ''')
+hitung_molaritas = st.button('Hitung Molaritas')
+
+if hitung_molaritas:
+    Operasi_Molaritas=massa/(fp*volume*bm)
+    st.write(f'''
+            M =
+        {massa}/{fp} × {volume} × {bm} = {Operasi_Molaritas}
+        ''')
+    
